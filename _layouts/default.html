@@ -6,8 +6,12 @@
 </head>
 
 <body>
-    {% include navigation.html %}
-    
-    {{ content }}
+    <header>
+        {% include navigation.html %}
+    </header>
+
+    <content class="content_width">
+        {{ content }}
+    </content>
 </body>
 </html>

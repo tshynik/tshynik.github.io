@@ -1,5 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 .current {
   color: green;
+}
+
+header {
+  display: block;
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  padding: 80px;
+  border: 1px black;
+  z-index: 1000;
+}
+
+content {
+  display: block;
+  position: relative;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 160px;
+  border: 1px black;
+}
+
+@media (min-width: 800px) {
+  header, content {
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+    max-width: 80%;
+  }
+}
+h1, h2, h3, nav {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav {
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=styles.css.map */
