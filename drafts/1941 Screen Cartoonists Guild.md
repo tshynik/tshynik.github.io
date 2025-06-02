@@ -1,0 +1,5 @@
+> On May 29, 1941, Walt Disney Studio cartoonists and animators began a successful five-week strike demanding recognition of their union, the Screen Cartoonists Guild (SCG). This was in response to events in the summer of 1940, when influential animation director Art Babbitt and other workers gathered 400 signed union authorization cards and sought recognition from management. But Walt Disney rejected the results and fired Babbitt and other artists in retaliation for union activity. The cartoonists and animators stood strong, in part thanks to the support of their union siblings in the entertainment industry. Ultimately, this fight landed in front of a federal mediator, who ruled in favor of the union. Disney has been a union shop ever since. Today, that SCG lives on as The Animation Guild, Theatrical Stage Employees (IATSE) Local 839.
+
+- AFL-CIO weekly update newsletter
+
+#may-29 #1940s
