@@ -1,0 +1,237 @@
+/* FONTS AND COLORS */
+
+:root {
+    /* this has to be set to switch between light or dark */
+    /*color-scheme: light dark;*/
+
+    /* CSS HEX
+    https://coolors.co/233d4d-fe7f2d-fcca46-a1c181-619b8a */
+    --black: #131313;
+    --gray-d: #444;
+    --gray-m: #777;
+    --gray-l: #aaa;
+    --accent: tomato;
+    /*--fern: #5FAD41;*/
+    /*--olive: #a1c181;*/
+     /*--color-e: #619b8aff; */
+    --white: ghostwhite;
+
+    /*--light-bg: var(--white);
+    --light-color: var(--black);
+    --light-header: var(--olive);
+    --light-link: var(--fern);
+
+    --dark-bg: var(--black);
+    --dark-color: var(--white);
+    --dark-header: var(--olive);
+    --dark-link: var(--fern);*/
+}
+
+@font-face {
+    font-family: 'SpecialElite';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/SpecialElite-Regular.ttf');
+}
+
+/***** Layout *****/
+body {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: Helvetica, sans-serif;
+    background: var(--white);
+}
+h1, h2, h3 {
+    font-weight: normal;
+    font-family: 'SpecialElite', monospace;
+    /*font-size: 2em;*/
+}
+hgroup {
+    padding: .5em 1.5em .5em 1.5em;
+    margin: 0 0 0 0;
+    background: var(--gray-d);
+    /*border-radius: 1em;*/
+    border-end-end-radius: 1em 1em;
+    border-end-start-radius: 1em 1em;
+}
+hgroup h1 {
+    line-height: 1em;
+}
+/* note: tabs and stuff are also in a <footer> */
+body > footer {
+    padding: 1em 1em 1em 1.5em;
+    margin: 1em 0 0 0;
+    background: var(--gray-d);
+    border-radius: 1em;
+    color: var(--white);
+}
+
+/* HTML5 tags */
+header,
+section,
+footer,
+aside,
+figure {
+    display: block;
+    max-width: 800px;
+}
+
+
+/*** LINKS ***/
+a {
+    /*background: var(--accent);*/
+    color: var(--white);
+    text-decoration-style: dashed; /*wavy also fun*/
+}
+footer a {
+    background: var(--accent);
+}
+a:visited {
+    /*color: var(--white);*/
+    text-decoration-line: line-through;
+}
+a:focus, a:hover, a:active {
+    /*color: var(--white);*/
+    text-decoration-style: wavy; /*wavy also fun*/
+}
+
+/* NAVIGATION */
+nav > ul {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+nav > ul > li {
+    padding: .75em;
+    background: var(--accent);
+    border-radius: 1em;
+}
+
+/* TAGS */
+p#tags {
+    line-height: 2em;
+}
+a.shelftag {
+    border-radius: 1em;
+    padding: .25em;
+    /*margin: .5em;*/
+    background: var(--accent);
+}
+a.shelftag::before, a.taglist::before {
+    content: "#";
+}
+/* TAGS PAGEs */
+ul.taglist {
+    list-style-type: none;
+}
+
+/* POSTS */
+article {
+    margin: 0;
+    padding: 1.5em;
+    max-width: 800px;
+    display: flex;
+}
+article > footer {
+    padding: 0 0 0 1em; /*top right bottom left*/
+    /*rotate: -90deg;*/
+}
+article > header h2 { /*the title*/
+    line-height: 1.25em;
+    margin: 0;
+}
+
+/* POST OR PAGE ALONE */
+
+article.full {
+    flex-direction: column;
+    align-items: flex-start; /* how the header and etc are aligned in the article - this right-aligns */
+    border-end-end-radius: .75em;
+    border-start-end-radius: .75em;
+    border-end-start-radius: .75em;
+    border-start-start-radius: .75em;
+    background: var(--gray-l);
+}
+
+/* BOOK PILE: */
+article.summary {
+    flex-direction: row;
+    align-items: center; /*center align*/
+    justify-content: space-between; /*start/end*/
+    border-end-end-radius: 1em 50%;
+    border-start-end-radius: 1em 50%;
+    border-end-start-radius: 1em 50%;
+    border-start-start-radius: 1em 50%;
+}
+article.summary:nth-child(odd) {
+    background: var(--gray-m);
+}
+article.summary:nth-child(even) {
+    background: var(--gray-l);
+}
+article.summary:nth-child(5n) {
+    margin-right: 0;
+    margin-left: 100px;
+}
+article.summary:nth-child(5n+1) {
+    margin-right: 125px;
+    margin-left: 25px
+}
+article.summary:nth-child(5n+2) {
+    margin-right: 50px;
+    margin-left: 50px
+}
+article.summary:nth-child(5n+3) {
+    margin-right: 75px;
+    margin-left: 0px
+}
+article.summary:nth-child(5n+4) {
+    margin-right: 25px;
+    margin-left: 75px
+}
+article.summary > section {
+    display: none;
+}
+article.summary > footer > address {
+    display: none;
+}
+
+/**** TEXT FORMATTING IN POSTS ****/
+spoiler:first-of-type::before {
+    content: "(highlight to read spoiler) ";
+    background: var(--gray-l);
+    font-style: italic;
+}
+spoiler {
+    color: var(--black);
+    background: var(--black);
+}
+
+.rating-pos {
+    color: var(--accent);
+    font-size: 1.5em;
+    line-height: 1em;
+}
+ul.star-rating {
+    max-width: 150px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between; /*start/end*/
+    color: var(--accent);
+    padding: 5px; /*get rid of ul default left padding*/
+    font-size: 1.5em;
+    line-height: 1em;
+    font-weight: normal;
+    background-color: var(--gray-d);
+    border-radius: 1em;
+}
+ul.star-rating > li {
+    list-style-type: none;
+    align-items: center; /*center align*/
+}
