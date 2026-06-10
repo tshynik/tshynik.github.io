@@ -2,7 +2,7 @@
 
 :root {
     /* this has to be set to switch between light or dark */
-    /*color-scheme: light dark;*/
+    color-scheme: light dark;
 
     /* CSS HEX
     https://coolors.co/233d4d-fe7f2d-fcca46-a1c181-619b8a */
@@ -16,15 +16,17 @@
      /*--color-e: #619b8aff; */
     --white: ghostwhite;
 
-    /*--light-bg: var(--white);
-    --light-color: var(--black);
-    --light-header: var(--olive);
-    --light-link: var(--fern);
+    --lt-bg-main: var(--white);
+    --lt-bg-header: var(--gray-d);
+    --lt-color: var(--black);
+    --lt-book-1: var(--gray-l);
+    --lt-book-2: var(--gray-m);
 
-    --dark-bg: var(--black);
-    --dark-color: var(--white);
-    --dark-header: var(--olive);
-    --dark-link: var(--fern);*/
+    --dk-bg-main: var(--black);
+    --dk-bg-header: var(--gray-d); /*gray-l is too light I think*/
+    --dk-color: var(--white);
+    --dk-book-1: var(--gray-d);
+    --dk-book-2: var(--gray-m);
 }
 
 @font-face {
@@ -41,17 +43,20 @@ body {
     margin: 0 auto;
     max-width: 800px;
     font-family: Helvetica, sans-serif;
-    background: var(--white);
+    background: light-dark(var(--lt-bg-main), var(--dk-bg-main));
 }
 h1, h2, h3 {
     font-weight: normal;
     font-family: 'SpecialElite', monospace;
     /*font-size: 2em;*/
 }
+img {
+    width: 100%;
+}
 hgroup {
     padding: .5em 1.5em .5em 1.5em;
     margin: 0 0 0 0;
-    background: var(--gray-d);
+    background: light-dark(var(--lt-bg-header), var(--dk-bg-header));
     /*border-radius: 1em;*/
     border-end-end-radius: 1em 1em;
     border-end-start-radius: 1em 1em;
@@ -59,13 +64,16 @@ hgroup {
 hgroup h1 {
     line-height: 1em;
 }
+hgroup a {
+    color: var(--accent);
+}
 /* note: tabs and stuff are also in a <footer> */
 body > footer {
     padding: 1em 1em 1em 1.5em;
     margin: 1em 0 0 0;
-    background: var(--gray-d);
+    background: light-dark(var(--lt-bg-header), var(--dk-bg-header));
     border-radius: 1em;
-    color: var(--white);
+    color: light-dark(var(--lt-color), var(--dk-color));
 }
 
 /* HTML5 tags */
@@ -82,7 +90,7 @@ figure {
 /*** LINKS ***/
 a {
     /*background: var(--accent);*/
-    color: var(--white);
+    color: light-dark(var(--lt-color), var(--dk-color));
     text-decoration-style: dashed; /*wavy also fun*/
 }
 footer a {
@@ -155,7 +163,7 @@ article.full {
     border-start-end-radius: .75em;
     border-end-start-radius: .75em;
     border-start-start-radius: .75em;
-    background: var(--gray-l);
+    background: light-dark(var(--lt-book-1), var(--dk-book-1));
 }
 
 /* BOOK PILE: */
@@ -169,10 +177,10 @@ article.summary {
     border-start-start-radius: 1em 50%;
 }
 article.summary:nth-child(odd) {
-    background: var(--gray-m);
+    background: light-dark(var(--lt-book-2), var(--dk-book-2));
 }
 article.summary:nth-child(even) {
-    background: var(--gray-l);
+    background: light-dark(var(--lt-book-1), var(--dk-book-1));
 }
 article.summary:nth-child(5n) {
     margin-right: 0;
@@ -204,12 +212,12 @@ article.summary > footer > address {
 /**** TEXT FORMATTING IN POSTS ****/
 spoiler:first-of-type::before {
     content: "(highlight to read spoiler) ";
-    background: var(--gray-l);
+    background: light-dark(var(--lt-book-1), var(--dk-book-1));
     font-style: italic;
 }
 spoiler {
-    color: var(--black);
-    background: var(--black);
+    color: light-dark(var(--lt-color), var(--dk-color));
+    background: light-dark(var(--lt-color), var(--dk-color));
 }
 
 .rating-pos {
